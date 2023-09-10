@@ -2,7 +2,7 @@ init python:
     import os
     import pygame
     
-    renpy.music.register_channel("lipsync", "sfx", True)
+    renpy.music.register_channel("lipsync", "sfx", False)
 
     # Directory containing the lipsync data files
     lipsync_data_dir = "lip-sync-plugin/lip-sync-data/"
