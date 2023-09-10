@@ -94,7 +94,9 @@ label start:
     "Thank you for watching!"
 ```
 
-- 🚨 Note: Reference the mouth shapes in the images directory for accuracy.
+### 🚨 Note
+- Reference the mouth shapes in the images directory for accuracy.
+- https://github.com/DanielSWolf/rhubarb-lip-sync#mouth-shapes
 
 ## 📜 Licensing
 
