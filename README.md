@@ -2,6 +2,8 @@
 
 Enhance your Ren'Py visual novel experience with the Lip Sync Plugin, integrating lip-sync animations seamlessly using the Rhubarb Lip Sync tool.
 
+![image](./README/thumbnail_lipsync.png)
+
 ## ⭐️ Key Feature
 
 ### 1. Asynchronous Lip-Sync
