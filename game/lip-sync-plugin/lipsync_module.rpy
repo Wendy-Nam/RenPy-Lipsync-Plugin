@@ -6,9 +6,9 @@ init python:
     
     # Directory containing the lipsync data files
     lipsync_data_dir = "lip-sync-plugin/lip-sync-data/"
-    lipsync_key_released = True  # Flag to track whether the Space or Enter key is released
-    mouse_button_released = True  # Flag to track whether the mouse button is released
-    touch_released = True  # Flag to track whether a touch event is released
+    lipsync_key_released = False  # Flag to track whether the Space or Enter key is released
+    mouse_button_released = False  # Flag to track whether the mouse button is released
+    touch_released = False  # Flag to track whether a touch event is released
     
     # Function to load lipsync data for a character and audio track
     def load_lipsync_data(character_name, audio_track):
