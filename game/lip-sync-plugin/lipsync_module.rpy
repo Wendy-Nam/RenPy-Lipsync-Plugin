@@ -1,7 +1,8 @@
 init python:
     import os
     import pygame
-        
+    import re
+    
     renpy.music.register_channel("lipsync", "sfx", False)
     
     # Directory containing the lipsync data files
@@ -23,10 +24,14 @@ init python:
             start_time, mouth_shape = line.strip().split('\t')
             lipsync_data.append((float(start_time), mouth_shape))
     
+    def trim_bracketed_strings(s):
+        # This regex will find all occurrences of {some string} in s
+        return re.sub(r'\{.*?\}', '', s).rstrip()
+    
     # Function to apply lipsync animation to a dialogue
     def lipsync(character, audio_track, dialogue):
         global lipsync_key_released, mouse_button_released, touch_released
-        character_name = str(character.name)
+        character_name = trim_bracketed_strings(str(character.name))
         load_lipsync_data(character_name, audio_track)  # Load lipsync data based on the audio track
         audio_path = os.path.join('voice', character_name, audio_track).replace("\\",'/')
         renpy.music.play(audio_path, channel="lipsync")  # Play the audio track
