@@ -28,7 +28,7 @@ init python:
         global lipsync_key_released, mouse_button_released, touch_released
         character_name = str(character.name)
         load_lipsync_data(character_name, audio_track)  # Load lipsync data based on the audio track
-        audio_path = os.path.join('voice', character_name, audio_track)
+        audio_path = os.path.join('voice', character_name, audio_track).replace("\\",'/')
         renpy.music.play(audio_path, channel="lipsync")  # Play the audio track
         prev_start_time = 0
         interrupted = False  # Flag to track if the interaction was interrupted
