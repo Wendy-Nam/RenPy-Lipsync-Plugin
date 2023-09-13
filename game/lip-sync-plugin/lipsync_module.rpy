@@ -5,7 +5,6 @@ init python:
     renpy.music.register_channel("lipsync", "sfx", False)
     
     # Directory containing the lipsync data files
-    lipsync_data_dir = "lip-sync-plugin/lip-sync-data/"
     lipsync_key_released = False  # Flag to track whether the Space or Enter key is released
     mouse_button_released = False  # Flag to track whether the mouse button is released
     touch_released = False  # Flag to track whether a touch event is released
@@ -16,7 +15,7 @@ init python:
         lipsync_data = []
         # Construct the relative path to the lipsync data file
         audio_file = os.path.basename(audio_track)
-        file_path = os.path.join(lipsync_data_dir, character_name, os.path.splitext(audio_file)[0] + ".txt")
+        file_path = os.path.join('lip-sync-plugin','lip-sync-data', character_name, os.path.splitext(audio_file)[0] + ".txt")
         # Load the lipsync data using renpy.load()
         lipsync_text = renpy.file(file_path).read().decode("utf-8")
         # Parse the lipsync data and store it as a list of tuples (start_time, mouth_shape)
