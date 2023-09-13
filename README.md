@@ -33,6 +33,7 @@ Seamlessly terminate voice-over and lip-sync upon user interaction (e.g., skippi
 ### 4. Prepare Audio Files
 ![alt-text-1](./README/audio_dir.png "title-1")
 - For your project's voice-over audio files, arrange them in the `audio/voice` directory.
+- 🚨 Important: Ensure that the subdirectories under `audio/voice` have the same name with the character. 
 - 🚨 Important: Ensure that these audio files are in the `.wav` or `.ogg` format.
 
 ### 5. Generate Lip Sync Data
