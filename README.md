@@ -31,23 +31,23 @@ Seamlessly terminate voice-over and lip-sync upon user interaction (e.g., skippi
 - Replace the existing version of Rhubarb-Lip-Sync with your new one.
 
 ### 4. Prepare Audio Files
-
+![alt-text-1](./README/audio_dir.png "title-1")
 - For your project's voice-over audio files, arrange them in the `audio/voice` directory.
 - 🚨 Important: Ensure that these audio files are in the `.wav` or `.ogg` format.
 
 ### 5. Generate Lip Sync Data
 
-Execute the `generate_lipsync_data.py` script located in the `lip-sync-plugin` directory. This script generates lip-sync data files for your audio files in the `lip-sync-data` subdirectory.
+- 🚨 Important: Before the execution, edit the `line 9` of `generate_lipsync_data.py`, according to your Rhubarb module name.
+- Execute the `generate_lipsync_data.py` script located in the `lip-sync-plugin` directory. This script generates lip-sync data files for your audio files in the `lip-sync-data` subdirectory.
 Run the following code in the `lip-sync-plugin` directory:
-
-```bash
-python3 generate_lipsync_data.py
-```
-
-After execution, observe the generated subdirectories and files in the lip-sync-data directory:
-
-![alt-text-1](./README/audio_dir.png "title-1")
-![alt-text-2](./README/lipsync-data.png "title-1")
+  ```bash
+  python3 generate_lipsync_data.py
+  ```
+- (FYI) If you are using Vscode editor having Python extension installed, You can run the code by simply pressing the triangle button
+  ![image](./README/vscode_howto_run_python_code.png)
+- After execution, observe the generated subdirectories and files in the lip-sync-data directory:
+  ![alt-text-1](./README/audio_dir.png "title-1")
+  ![alt-text-2](./README/lipsync-data.png "title-1")
 
 ## 🎮 Integration
 
