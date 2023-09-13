@@ -1,5 +1,6 @@
 import os
 import subprocess
+import re
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(script_dir)  # Get the parent directory of the script
@@ -16,9 +17,14 @@ def generate_lipsync_data(character_dir, audio_file):
     subprocess.run([rhubarb_path, "-f", "tsv", "-o", output_path, audio_path], check=True)
     print(f"Lipsync data generated for {audio_file}")
 
+def trim_bracketed_strings(s):
+    # This regex will find all occurrences of {some string} in s
+    return re.sub(r'\{.*?\}', '', s).rstrip()
+
 # Iterate through characters and voice files
 characters = [d for d in os.listdir(os.path.join(script_dir, os.pardir, "audio", "voice")) if os.path.isdir(os.path.join(script_dir, os.pardir, "audio", "voice", d))]
 for character in characters:
+    character = trim_bracketed_strings(character)
     voice_dir = os.path.join(os.path.join(script_dir, os.pardir, "audio", "voice"), character)
     voice_files = [f for f in os.listdir(voice_dir) if f.endswith(".wav") or f.endswith(".ogg")]
     for voice_file in voice_files:
