@@ -40,6 +40,8 @@ init python:
         # Show the mouth shapes at the appropriate times
         for i in range(len(lipsync_data)):
             renpy.say(who=character, what=dialogue+"{fast}", interact=False)   # show the dialogue
+            if i == 0:
+                renpy.store._history = False
             start_time, mouth_shape = lipsync_data[i]
             renpy.show(character_name + ' mouth_' + mouth_shape)                    # Show the mouth shape image
             if i < len(lipsync_data) - 1:   
@@ -56,11 +58,13 @@ init python:
             if renpy.is_skipping() or touched or (keys[pygame.K_LCTRL] or keys[pygame.K_RCTRL]):
                 renpy.show(character_name + ' mouth_X')
                 renpy.music.stop(channel="lipsync")
+                renpy.store._history = True
                 return
             if (keys[pygame.K_RETURN] or keys[pygame.K_SPACE]) and lipsync_key_released:
                 renpy.show(character_name + ' mouth_X')
                 renpy.music.stop(channel="lipsync")
                 lipsync_key_released = False
+                renpy.store._history = True
                 return
             if not keys[pygame.K_RETURN] and not keys[pygame.K_SPACE]:
                 lipsync_key_released = True  # Set the flag to True when the keys are released
@@ -82,3 +86,4 @@ init python:
         renpy.music.stop(channel="lipsync")
         if not interrupted:
             renpy.say(who=character, what=dialogue+"{fast}", interact=True)   # show the dialogue
+        renpy.store._history = True
