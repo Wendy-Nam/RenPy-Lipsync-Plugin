@@ -39,6 +39,7 @@ Seamlessly terminate voice-over and lip-sync upon user interaction (e.g., skippi
 ### 5. Generate Lip Sync Data
 
 - 🚨 Important: Before the execution, edit the `line 9` of `generate_lipsync_data.py`, according to your Rhubarb module name.
+- 🚨 Important: For non-English languages replace `    subprocess.run([rhubarb_path, "-f", "tsv", "-o", output_path, audio_path], check=True)` with `    subprocess.run([rhubarb_path, "-r", "phonetic", "-f", "tsv", "-o", output_path, audio_path], check=True)` inside `generate_lipsync_data.py`.
 - Execute the `generate_lipsync_data.py` script located in the `lip-sync-plugin` directory. This script generates lip-sync data files for your audio files in the `lip-sync-data` subdirectory.
 Run the following code in the `lip-sync-plugin` directory:
   ```bash
