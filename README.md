@@ -34,11 +34,10 @@ Seamlessly terminate voice-over and lip-sync upon user interaction (e.g., skippi
 ![alt-text-1](./README/audio_dir.png "title-1")
 - For your project's voice-over audio files, arrange them in the `audio/voice` directory.
 - 🚨 Important: Ensure that the subdirectories under `audio/voice` have the same name with the character. 
-- 🚨 Important: Ensure that these audio files are in the `.wav` or `.ogg` format.
+- 🚨 Important: Ensure that these audio files have `.wav` or `.ogg` suffixes.
 
 ### 5. Generate Lip Sync Data
 
-- 🚨 Important: Before the execution, edit the `line 9` of `generate_lipsync_data.py`, according to your Rhubarb module name.
 - Execute the `generate_lipsync_data.py` script located in the `lip-sync-plugin` directory. This script generates lip-sync data files for your audio files in the `lip-sync-data` subdirectory.
 Run the following code in the `lip-sync-plugin` directory:
   ```bash
