@@ -5,6 +5,10 @@
 ### [seo-a-nam.itch.io/lipsync-plugin-for-renpy](https://seo-a-nam.itch.io/lipsync-plugin-for-renpy)  
 > Most users download it here. Troubleshooting and updates are also handled on Itch.io.
 
+# 🎥 Video Tutorials
+
+### [Simple SetUp Video Tutorials](https://drive.google.com/drive/u/3/folders/1Yf8ZVb9zf7lav44Z9uDa2qFm0fJKGNVt)
+
 # 💡 Overview 
 Enhance your Ren'Py visual novel experience with the Lip Sync Plugin, integrating lip-sync animations seamlessly using the Rhubarb Lip Sync tool.
 
